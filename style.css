@@ -12,52 +12,52 @@ body{
     background:#24232a ;
 }
 
-.container{
+
+.container {
     position: relative;
     width: 380px;
     height: 420px;
-    background-color:#1c1c1c ;
+    background-color: #1c1c1c;
     border-radius: 8px;
     overflow: hidden;
 }
-.container::before{
-    content:"";
-    top: -50%;
-    left: -50%;
-    z-index: 10;
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: -50%; 
+    left: -50%; 
     width: 380px;
     height: 420px;
-    position: absolute;
-    background: linear-gradient(0deg, transparent,#03fe78, #03fe78 );
-     
-    
-     transform-origin: bottom right;
-     animation: animate 7s linear infinite;
+    background: linear-gradient(0deg, transparent, #03fe78);
+    transform-origin: bottom right; 
+    animation: animate 7s linear infinite;
+    z-index: 2; 
 }
 
-
-.container:after{
-    content:"";
-    top: -50%;
-    left: -50%;
-
+.container::after {
+    content: "";
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
     width: 380px;
     height: 420px;
-    position: absolute;
-    background: linear-gradient(0deg, transparent,
-     #d803fe, #d803fe );
-     transform-origin: bottom right;
-     animation-delay:3s ;
-     animation: animate 7s linear infinite;
+    background: linear-gradient(0deg, transparent, #d803fe);
+    transform-origin: top left; 
+    animation: animate 7s linear infinite;
+    animation-delay: 3.5s; 
+    z-index: 3; 
 }
+
 @keyframes animate {
     0% {
         transform: rotate(0deg);
     }
-    100%{
-        transform: rotate(300deg);
+    100% {
+        transform: rotate(360deg);
     }
 }
+
 .form{
     position: absolute;
     inset: 3px;
@@ -88,10 +88,7 @@ form{
 position: relative;
 width: 300px;
 margin-top: 35px;
-/* margin: 0 auto;
-display: flex;
-justify-content: center;
-align-items: center; */
+
 }
 .inputBox input{
     width: 100%;
@@ -101,10 +98,7 @@ align-items: center; */
     border-top: none;
     font-size: 1rem;
     outline: none;
-    /* margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center; */
+    
     border-left: none;
     padding: 20px 10px 10px;
 }
